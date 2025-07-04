@@ -1,0 +1,2071 @@
+@import "./mediaQueryMixin.less";
+
+@red: #ed3035;
+@green: #60db91;
+@peachpuff: peachpuff;
+@black: black;
+@gray50: #999999;
+@lightorange: #fcb98b;
+@orange: #ffa500;
+@pinkswan: #b2b2b2;
+@matterhorn: #4c4c4c;
+@white: #fff;
+@smokewhite: #f5f5f5;
+@highlight-color: #fff;
+@gray40: #666;
+@gray95: #f2f2f2;
+@gray90: #e5e5e5;
+@graybg: #f8f8f8;
+@gray99: #999;
+@yellow: #f9bb4b;
+@graydark: #020100;
+@text-color: @matterhorn;
+@fadegreen: rgba(96, 219, 145, 0.5);
+@hoverred: #fa5a5a;
+@blue: #475cde;
+@lightgreen: #63971a;
+@amber: #f97334;
+@darkorange: #f92b1c;
+@skyblue: #6ed0da;
+@warmblue: #475cde;
+
+@error-color: @red;
+@success-color: @green;
+@divider-color: @gray95;
+
+@input-focus-border-color: @matterhorn;
+@input-hover-border-color: #fff;
+@input-label-color: @pinkswan;
+@input-placeholder-color: #ccc;
+@input-height-base: 36px;
+
+@box-shadow-base: 0 2px 14px 0 rgba(0, 0, 0, 0.1);
+@box-shadow-secondary: 0 0 5px 0 rgba(0, 0, 0, 0.11);
+@box-shadow-dropbox: 0 2px 7px 0 rgba(0, 0, 0, 0.11);
+@box-shadow-dark: 0 2px 7px 0 rgba(0, 0, 0, 0.11);
+
+@border-color-base: #fff;
+@border-width-base: 0px;
+@border-radius-base: 4px;
+@border: 2px solid rgba(0,0,0,0.2);
+
+body {
+
+  .View-Bg-Dashboard {
+    background-image: url('/dashboard/view-bg-dashboard.svg');
+    position: absolute;
+    height: calc(100vh - 25px);
+    left: 0;
+    right: 0;
+    z-index: 0;
+    top: 0;
+  }
+  .View-Bg-Eds-Dashboard {
+    background-image: url('/dashboard/bg-eds-dashboard.png');
+    position: absolute;
+    height: calc(100vh - 85px);
+    min-height: 750px;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    top: 58px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #161F3B;
+    background-blend-mode: color-burn;
+  }
+
+  .ZiqitzaEdsDashboard {
+    .App {
+      height: 200px;
+      background-color: @black;
+      color: @peachpuff;
+      align-content: center;
+      justify-content: center;
+      display: grid;
+    }
+
+    .App h1 {
+      color: @peachpuff;
+    }
+
+    .HasPermission_DisableLink {
+      pointer-events: none;
+      color: @matterhorn;
+      > div {
+        text-decoration: none;
+        color: @matterhorn;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+
+    [ant-click-animating-without-extra-node]:after {
+      -webkit-animation: none !important;
+      -moz-animation: none !important;
+      -o-animation: none !important;
+      -ms-animation: none !important;
+      animation: none !important;
+    }
+
+    .ant-btn {
+      line-height: 1;
+      border-color: #fff;
+      height: 40px;
+      border: 0px solid transparent;
+      font-size: 1rem;
+      border-radius: 4px;
+      color: #fff;
+      padding: 12px 15px;
+      background-color: @matterhorn;
+      font-weight: bold;
+    }
+    .ant-btn-link {
+      color: #ed3035;
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+
+    .ActionLabel {
+      font-size: 0.875rem;
+      color: @gray99;
+      margin-bottom: 7px;
+    }
+
+    .List__Header {
+      padding-left: 66px;
+      color: @gray99;
+      font-weight: bold;
+    }
+
+    .List__Row {
+      padding-left: 20px;
+      align-items: center;
+    }
+
+    .ant-btn-link {
+      font-weight: normal;
+    }
+
+    .ant-btn-default:focus,
+    .ant-btn-default:hover,
+    .ant-btn-default:active {
+      color: #fff;
+      border-color: @matterhorn;
+    }
+
+    .ant-btn-plain {
+      background-color: @highlight-color;
+      color: @matterhorn;
+      box-shadow: @box-shadow-secondary;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .ant-btn-plain:focus,
+    .ant-btn-plain:hover,
+    .ant-btn-plain:active {
+      background-color: @highlight-color;
+      color: @matterhorn;
+      box-shadow: @box-shadow-secondary  !important;
+    }
+
+    .Box--Shadow {
+      box-shadow: @box-shadow-base;
+    }
+
+    .Width-Full {
+      width: 100%;
+    }
+
+    // Border
+    .BorderRadius--Base {
+      border-radius: @border-radius-base;
+    }
+
+    .Border-None {
+      border: none;
+    }
+    .TextAlign--Center {
+      text-align: center;
+    }
+    .TextAlign--Right {
+      text-align: right;
+    }
+
+    // divider
+    .Divider-Bottom {
+      border-bottom: 1px solid @divider-color;
+    }
+
+    .Divider-Bottom-Gray90 {
+      border-bottom: 1px solid @gray90;
+    }
+
+    .Divider-Left {
+      border-left: 1px solid @divider-color;
+    }
+
+    .Flex {
+      display: flex;
+    }
+
+    .Flex-Direction-Column {
+      flex-direction: column;
+    }
+
+    .Flex-Grow-1 {
+      flex-grow: 1;
+    }
+
+    .Flex-Grow-2 {
+      flex-grow: 2;
+    }
+
+    .JustifyContent--Center {
+      justify-content: center;
+    }
+
+    .Height-Full {
+      height: 100%;
+    }
+
+    .Align-Items-Center {
+      align-items: center;
+    }
+
+    .Flex-Space-Between {
+      justify-content: space-between;
+    }
+
+    .Ml-20 {
+      margin-left: 20px;
+    }
+    //Background color
+    .Bg-Gray {
+      background-color: @graybg;
+    }
+    .Gray50-Text {
+      color: @gray50;
+    }
+    .Break-Word {
+      word-break: break-word;
+    }
+
+    // fonts
+    .Font--WB {
+      font-weight: bold;
+    }
+
+    .Font--Italic {
+      font-style: italic;
+    }
+
+    .Font--S10 {
+      font-size: 0.625rem;
+    }
+
+    .Font--S12 {
+      font-size: 0.75rem;
+    }
+
+    .Font--S14 {
+      font-size: 0.875rem;
+    }
+
+    .Font--S16 {
+      font-size: 1rem;
+    }
+
+    .Font--S18 {
+      font-size: 1.125rem;
+    }
+
+    .Font--S20 {
+      font-size: 1.25rem;
+    }
+
+    .Font--S24 {
+      font-size: 1.5rem;
+    }
+
+    .Text-Decoration-Underline {
+      text-decoration: underline;
+    }
+    .Text--UpperCase {
+      text-transform: uppercase;
+    }
+    .Text--White {
+      color: white;
+    }
+    .Opacity--50 {
+      opacity: 0.5;
+    }
+    .Warmblue-Text{
+      color: @blue;
+    }
+    // margins
+    .Mt-4{
+      margin-top: 4px;
+    }
+    .Mt-8{
+      margin-top: 8px;
+    }
+    .Mt-10{
+      margin-top: 10px;
+    }
+    .Mt-15{
+      margin-top: 15px;
+    }
+    .Mt-12 {
+      margin-top: 12px;
+    }
+
+    .Mt-20 {
+      margin-top: 20px;
+    }
+    .Mt-28 {
+      margin-top: 28px;
+    }
+    .Mt-30 {
+      margin-top: 30px;
+    }
+
+    .Mt-40 {
+      margin-top: 40px;
+    }
+
+    .Mb-6 {
+      margin-bottom: 6px;
+    }
+
+    .Ml-5 {
+      margin-left: 5px;
+    }
+    .Ml-8 {
+      margin-left: 8px;
+    }
+    .Ml-15{
+      margin-left: 15px;
+    }
+    .Ml-20 {
+      margin-left: 20px;
+    }
+
+    .Ml-10 {
+      margin-left: 10px;
+    }
+    .Ml-12 {
+      margin-left: 12px;
+    }
+
+    .Ml-24 {
+      margin-left: 24px;
+    }
+
+    .Mr-8 {
+      margin-right: 8px;
+    }
+
+    .Mr-20 {
+      margin-right: 20px;
+    }
+
+    .Mr-35 {
+      margin-right: 35px;
+    }
+
+    // Paddings
+    .Pl-12 {
+      padding-left: 12px;
+    }
+
+    .Pr-12 {
+      padding-right: 12px;
+    }
+
+    // Cursor
+    .Cursor-Pointer {
+      cursor: pointer;
+    }
+
+    .Cursor-Default {
+      cursor: default;
+    }
+
+    // Text color
+    .GrayDark-Text {
+      color: @graydark;
+    }
+    .Blue-Text {
+      color: @blue;
+    }
+    .Red-Text {
+      color: @red;
+    }
+    .Label-Text {
+      font-size: 0.875rem;
+      color: #b2b2b2;
+      margin-bottom: 8px;
+    }
+    .Copy-Text {
+      margin-top: 3px;
+    }
+    .Value-Text {
+      margin-top: 17px;
+      word-break: break-all;
+    }
+
+    .BG--White {
+      background-color: #fff;
+    }
+
+
+    //ant checkbox
+    .ant-checkbox {
+      border: solid 2px @gray40;
+      border-radius: 2px;
+    }
+
+    .ant-checkbox-inner {
+      border-radius: 0px;
+      border: 0px;
+    }
+
+    .ant-checkbox-inner::after {
+      left: 21%;
+      height: 12px;
+      top: 45%;
+    }
+
+    // loader with overlay
+    .Loader-Overlay {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 9999;
+      background-color: rgba(243, 239, 239, 0.568);
+
+      .Overlay__Inner {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        position: absolute;
+      }
+
+      .Overlay__Content {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        z-index: 10009;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .ContentWrap {
+      margin-top: 0 !important;
+      padding-top: 60px !important;
+    }
+
+    // EdsDashboardFilterWrap
+    .EdsDashboardFilterWrap {
+      .overlay {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    // EdsDashboardSettingWrap
+    .EdsDashboardSettingWrap {
+      .overlay {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    // ListActionDateRangePicker
+    .ListActionDateRangePicker {
+      flex: 0 0 300px;
+
+      .DateRangePicker {
+        width: 238px !important;
+
+        .ant-picker {
+          top: 0px;
+          height: 40px;
+        }
+
+        .ant-picker-range .ant-picker-clear {
+          right: 9px;
+          top: 20px;
+        }
+      }
+    }
+
+    // ListActionSlider
+    .ListActionSlider {
+      .ant-slider {
+        width: 154px;
+        margin-left: 0px;
+      }
+
+      .ant-slider-rail {
+        height: 6px;
+      }
+
+      .ant-slider-track {
+        height: 6px;
+        background-color: @skyblue;
+      }
+
+      .ant-tooltip-open {
+        border-color: none;
+      }
+
+      .ant-slider-handle {
+        width: 16px;
+        height: 16px;
+        border: none;
+        background-color: @skyblue;
+      }
+
+      .ant-slider-handle:focus {
+        box-shadow: none;
+      }
+
+      .ant-slider:hover .ant-slider-track {
+        background-color: @skyblue;
+      }
+    }
+
+    // Input
+    .Input {
+      position: relative;
+      height: 56px;
+
+      .Input__Label {
+        font-size: 0.75rem;
+        color: @input-label-color;
+        margin-bottom: 8px;
+      }
+
+      .ant-input {
+        border-radius: 4px;
+        font-size: 0.875rem;
+        padding: 12px 8px 9px 8px;
+        position: absolute;
+        left: 0;
+        top: 20px;
+        height: 36px;
+        border-color: @white;
+      }
+      .Error {
+        &:extend(.Input__Label);
+        color: @error-color;
+      }
+
+      .Error--Border {
+        &:extend(.Box--Shadow);
+        border: 1px solid @error-color;
+      }
+
+      .ant-input-disabled:hover {
+        border-right-width: 0px !important;
+      }
+
+      .Input__Error {
+        font-size: 0.75rem;
+        position: absolute;
+        bottom: -19px;
+        left: 0;
+        color: @error-color;
+      }
+      .ant-input:hover {
+        border-right-width: 1px !important;
+      }
+      .ant-input:focus {
+        border: 1px solid @input-focus-border-color;
+        outline: 1;
+        -webkit-box-shadow: @box-shadow-base;
+        box-shadow: @box-shadow-base;
+        border-right-width: 1px !important;
+        border-color: @matterhorn;
+      }
+    }
+
+    // InputTextNative
+    .InputText-Native {
+      position: relative;
+      height: 56px;
+
+      .InputText-Native__Label {
+        font-size: 0.75rem;
+        color: @input-label-color;
+        margin-bottom: 8px;
+      }
+
+      .Error {
+        &:extend(.InputText-Native__Label);
+        color: @error-color;
+      }
+
+      .Error--Border {
+        &:extend(.Box--Shadow);
+        border: 1px solid @error-color;
+      }
+
+      input {
+        border-radius: 4px;
+        font-size: 0.875rem;
+        padding: 12px 8px 9px 8px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 20px;
+        height: 36px;
+        background-color: @white;
+        box-shadow: @box-shadow-base;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      input::placeholder {
+        opacity: 0.5;
+      }
+
+      input:focus {
+        border: 1px solid @input-focus-border-color;
+        outline: 1;
+        -webkit-box-shadow: @box-shadow-base;
+        box-shadow: @box-shadow-base;
+      }
+
+      .InputText-Native__Error {
+        font-size: 0.75rem;
+        position: absolute;
+        bottom: -19px;
+        left: 0;
+        color: @error-color;
+      }
+    }
+
+    // ListMaster
+    .ListMaster {
+      display: table;
+
+      .ListMaster__Header {
+        display: flex;
+        padding: 15px 15px 13px 21px;
+        width: 1160px;
+        border: solid 1px @smokewhite;
+        align-items: center;
+
+        .ListMaster__Header__Item {
+          font-weight: bold;
+          color: @gray50;
+        }
+        
+        .Break_All {
+          word-break: break-all;
+        }
+      }
+
+      .ListMaster__Row {
+        padding: 15px 15px 10px 22px;
+        display: flex;
+        width: 1160px;
+
+
+        .ListMaster__Row__Item {
+          word-break: break-all;
+        }
+      }
+
+      .ant-checkbox {
+        border: solid 1px @gray40;
+      }
+
+      .ant-checkbox-checked .ant-checkbox-inner {
+        background-color: @highlight-color;
+        border-radius: 2px;
+      }
+
+      .ant-checkbox-checked:after {
+        --antd-wave-shadow-color: @matterhorn;
+        border: unset;
+      }
+
+      .ant-checkbox-checked .ant-checkbox-inner::after {
+        border: 1.5px solid @matterhorn;
+        border-top: 0;
+        border-left: 0;
+      }
+
+      .DarkOrange {
+        color: @darkorange;
+      }
+      .Maroon {
+        color: #801D19;
+      }
+      .lightRed {
+        color: #f92b1c;
+      }
+
+      .LightGreen {
+        color: @lightgreen;
+      }
+
+      .Yellow {
+        color: @yellow;
+      }
+
+      .Amber {
+        color: @amber;
+      }
+
+      .Blue {
+        color: @blue;
+      }
+
+      .Black {
+        color: @black;
+      }
+
+      .Bg__MASTER {
+        background-color: @graybg;
+      }
+
+      [ant-click-animating-without-extra-node]:after {
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+      }
+    }
+
+    // ant select box
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      height: 100%;
+      padding-left: 16px;
+      padding-top: 2px;
+      border: none;
+    }
+
+    .ant-select-item {
+      padding-left: 16px;
+      font-size: 1rem;
+    }
+
+    .ant-select-focused .ant-select-selector,
+    .ant-select-selector:focus,
+    .ant-select-selector:active,
+    .ant-select-open .ant-select-selector {
+      border-color: #ffffff !important;
+      box-shadow: none !important;
+    }
+
+    .SelectDrop {
+      position: relative;
+      min-height: 78px;
+      width: 100%;
+      .LabelText {
+        font-size: 0.875rem;
+        color: @gray99;
+      }
+      .SelectWrap {
+        width: 275px;
+        position: relative;
+      }
+      .DropList {
+        max-height: 200px !important;
+        min-height: 36px;
+        background: @white;
+        border-radius: 4px; 
+        box-shadow: @box-shadow-dropbox;
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        top: 48px;
+        > div {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .DropListItem,
+      .DropListItemMulti {
+        padding: 10px;
+        margin: 0;
+        display: flex;
+        outline: none;
+        input {
+          width: calc(100% - 15px);
+        }
+        span:last-child {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .DropListItemMulti.ant-checkbox-wrapper {
+        margin-left: 0; 
+        max-height: 36px;
+      }
+      .Select {
+        width: 275px;
+        height: 36px;
+        border-radius: 4px;
+        background-color: white;
+        box-shadow: @box-shadow-dropbox;
+        border: none;
+        padding: 10px 25px 10px 8px;
+        outline: none;
+        position: absolute;
+        top: 6px;
+        cursor: default;
+        color: @graydark;
+      }
+      .Select.Disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .Selected-ReadOnly {
+        width: 275px;
+      }
+      .SelectedItemsWrap {
+        max-height: 92px;
+        margin-top: 54px;
+        overflow-y: auto;
+        border: 1px solid @gray95;
+        margin-bottom: 10px;
+      }
+      .SelectedItemsWrap.Readonly {
+        margin-top: 19px;
+      }
+      .SelectedItem {
+        width: auto;
+        height: 24px;
+        border-radius: 12px;
+        background-color: @gray95;
+        padding: 6px;
+        margin: 2px;
+        display: flex;
+        align-content: center;
+        line-height: 1;
+      }
+    
+      input:focus {
+        border: 1px solid @matterhorn;
+      }
+      input:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .Error-Border {
+        border: 1px solid @error-color;
+      }
+      .Error-Text {
+        font-size: 0.75rem;
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        color: @error-color;
+        line-height: 1;
+      }
+    
+      .DropListItemMulti {
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+      }
+    
+      .Drop-Arrow {
+        position: absolute;
+        top: 14px;
+        right: 8px;
+        pointer-events: none;
+        line-height: 1;
+      }
+    
+      .ant-checkbox-inner {
+        height: 14px;
+        width: 14px;
+      }
+      .ant-checkbox-checked .ant-checkbox-inner {
+        background-color: @highlight-color;
+        border-radius: 2px;
+      }
+    
+      .ant-checkbox-checked:after {
+        --antd-wave-shadow-color: @matterhorn;
+        border: unset;
+      }
+
+      .ant-checkbox-checked .ant-checkbox-inner::after {
+        border: 1.5px solid @matterhorn;
+        border-top: 0;
+        border-left: 0;
+        left: 16%;
+      }
+    }
+
+    // Button Custom
+    .ButtonCustom {
+      outline: none;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: @red;
+      color: @white;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    .ButtonCustom:hover {
+      background-color: @hoverred;
+    }
+
+    .ButtonCustom.Disabled {
+      color: rgba(0, 0, 0, 0.25);
+      background-color: @smokewhite;
+      border-color: @white;
+      text-shadow: none;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+    //Toggle Select
+    .ToggleSelect {
+      display: flex;
+      flex-direction: column;
+      .ToggleSelect__Label {
+        font-size: 0.875rem;
+        color: @gray99;
+        margin-bottom: 8px;
+      }
+      .ButtonCustom {
+        width: 135px;
+        height: 36px;
+        color: @text-color;
+        background-color: @white;
+        font-weight: normal;
+        border: 1px solid @gray90;
+        text-transform: lowercase;
+      }
+      .ButtonCustom:hover {
+        background-color: @white;
+      }
+      .ButtonCustom span:first-letter {
+        text-transform: uppercase;
+      }
+      .ButtonCustom.Selected {
+        background-color: @green;
+        border: none;
+        font-weight: bold;
+        box-shadow: @box-shadow-base;
+      }
+    }
+
+    .ToggleSelect.Disabled {
+      .ButtonCustom.Disabled {
+        border: 1px solid @gray90;
+        background-color: @white;
+      }
+      .ButtonCustom.Disabled:hover {
+        background-color: @white;
+      }
+      .ButtonCustom.Selected {
+        background-color: @fadegreen;
+        border: none;
+      }
+      .ButtonCustom.Selected:hover {
+        background-color: @fadegreen;
+      }
+    }
+    .Form-Wrap {
+      flex-wrap: wrap;
+    }
+    //chip
+    .Chip {
+      width: fit-content;
+      height: 24px;
+      border-radius: 12px;
+      background-color: @gray95;
+      padding: 6px;
+      margin: 2px;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      text-transform: capitalize;
+
+      .ChipName {
+        padding: 6px;
+      }
+    }
+    // selected filter Chips
+    .SelectedFilterChips {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    // Filter
+    .EdsDashboardFilter {
+      padding: 20px;
+      line-height: 1;
+
+      .Arrow-Up {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid white;
+      }
+      .ant-dropdown-menu-item:hover,
+      .ant-dropdown-menu-submenu-title:hover {
+        background-color: #ffffff !important;
+      }
+
+      .ant-dropdown-menu-item .ant-dropdown-menu-item-active {
+        background-color: #ffffff !important;
+      }
+
+      .ant-dropdown .ant-dropdown-placement-bottomLeft {
+        left: 245px;
+      }
+
+      .ant-menu {
+        line-height: 1;
+      }
+
+      .SelectDrop .SelectWrap {
+        width: 360px;
+      }
+
+      .SelectDrop .Select {
+        width: 360px;
+        top: 9px;
+        cursor: default;
+      }
+
+      .DropList {
+        margin-top: 8px;
+      }
+      .SelectDrop .LabelText {
+        color: @gray50;
+      }
+
+      .SelectDrop .Drop-Arrow {
+        top: 16px;
+      }
+   /* margin-top: 5px; */
+      .SelectDrop .SelectedItem .SelectedItemName {
+        
+      }
+
+      .Button-Width {
+        min-width: 116px;
+      }
+
+      .ToggleSelect {
+        width: 238px;
+      }
+
+      .ToggleSelect .ToggleSelect__Label {
+        margin-bottom: 7px;
+      }
+
+      .ToggleSelect .ButtonCustom {
+        width: 116px;
+      }
+
+      .Button-Icon {
+        vertical-align: middle;
+        margin-right: 9px;
+      }
+
+      .Button-Label {
+        font-weight: bold;
+        color: @matterhorn;
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+      }
+
+      .Button-Label-Cancel {
+        font-weight: bold;
+        color: @red;
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+      }
+
+      .Arrow-Filter-Position {
+        position: absolute;
+        top: -10px;
+        left: 243px;
+      }
+    }
+    .EdsDashboardSetting {
+      padding: 20px;
+      line-height: 1;
+
+      .Arrow-Up {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid white;
+      }
+      .ant-dropdown-menu-item:hover,
+      .ant-dropdown-menu-submenu-title:hover {
+        background-color: #ffffff !important;
+      }
+
+      .ant-dropdown-menu-item .ant-dropdown-menu-item-active {
+        background-color: #ffffff !important;
+      }
+
+      .ant-dropdown .ant-dropdown-placement-bottomLeft {
+        left: 245px;
+      }
+
+      .ant-menu {
+        line-height: 1;
+      }
+
+      .SelectDrop .SelectWrap {
+        width: 240px;
+      }
+
+      .SelectDrop .Select {
+        width: 240px;
+        top: 9px;
+        cursor: default;
+      }
+
+      .DropList {
+        margin-top: 8px;
+      }
+      .SelectDrop .LabelText {
+        color: @gray50;
+      }
+
+      .SelectDrop .Drop-Arrow {
+        top: 16px;
+      }
+
+      .SelectDrop .SelectedItem .SelectedItemName {
+        margin-top: 5px;
+      }
+
+      .Button-Width {
+        min-width: 116px;
+      }
+
+      .ToggleSelect {
+        width: 238px;
+      }
+
+      .ToggleSelect .ToggleSelect__Label {
+        margin-bottom: 7px;
+      }
+
+      .ToggleSelect .ButtonCustom {
+        width: 116px;
+      }
+
+      .Button-Icon {
+        vertical-align: middle;
+        margin-right: 9px;
+      }
+
+      .Button-Label {
+        font-weight: bold;
+        color: @matterhorn;
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+      }
+
+      .Button-Label-Cancel {
+        font-weight: bold;
+        color: @red;
+        font-size: 1rem;
+        letter-spacing: 0.2px;
+      }
+
+      .Arrow-Filter-Position {
+        position: absolute;
+        top: -10px;
+        left: 243px;
+      }
+    }
+
+    .ListActionToggleSelect{
+      padding: 5px;
+      height: 40px;
+      .ToggleSelect{
+        .ButtonCustom.Selected {
+          background-color: @skyblue !important;
+          color: @white;
+          font-weight: normal;
+        }
+        .ButtonCustom{
+          height: 30px;
+          width: 65px;
+          border: none !important;
+        }
+      } 
+    }
+
+    // Dashboard Card 
+    .Dashboard_DataCard_Wrap{
+      margin-top: 30px;
+      height: calc(100% - 30px);
+      .View-Bg-Eds-Dashboard {
+      }
+      .Dashboard_DataCard {
+        position: relative;
+        text-align: center;
+        padding: 16px;
+
+        border-radius: 14px;
+        background-clip: padding-box;
+        .DataCard_Content {
+          height: calc(100% - 30px);
+        }
+        .Icon{
+          background-clip: padding-box;
+          width: 70px;
+          height: 70px;
+          margin: 0 auto;
+          margin-top: -50px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    // Dashboard Call Answered Card 
+    .ClassAnswered__Card__Wrap{
+      .ClassAnswered__Card {
+        background-image: url('/dashboard/callAnswered.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+        position: relative;
+        .ClassAnswered__Data {
+          position: absolute;
+          top: 30%;
+          left: 10%;
+          .Heading {
+            color: #006a67;
+            font-size: 1.125rem;
+          }
+          .Value {
+            color: #4a4a4a;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+    // Dashboard Call Answered Card 
+    .Trips__Card__Wrap{
+      .Trips__Card {
+        background-image: url('/dashboard/trip.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+        position: relative;
+        .Trips_Heading {
+          padding-top: 5%;
+          text-align: center;
+          color: #6f84b2;
+          font-size: 1.125rem;
+        }
+        .Avg_Trips__Data {
+          position: absolute;
+          top: 30%;
+          left: 5%;
+          text-align: center;
+          .Heading {
+            font-size: 1rem;
+          }
+          .Value {
+            color: #4a4a4a;
+            font-size: 1.5rem;
+          }
+        }
+        .Avg_Trip_Time__Data {
+          position: absolute;
+          top: 30%;
+          right: 5%;
+          text-align: center;
+          .Heading {
+            font-size: 1rem;
+          }
+          .Value {
+            color: #4a4a4a;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+    // tab
+    .ant-tabs-nav .ant-tabs-tab-active:hover,
+    .ant-tabs-nav .ant-tabs-tab-active:focus,
+    .ant-tabs-nav .ant-tabs-tab:active,
+    .ant-tabs-nav .ant-tabs-tab-active {
+      color: @matterhorn;
+      font-weight: bold;
+    }
+    .ant-tabs-nav .ant-tabs-tab:hover {
+      color: @matterhorn;
+    }
+    .ant-tabs-nav .ant-tabs-tab-disabled:active,
+    .ant-tabs-nav .ant-tabs-tab-disabled:hover {
+      color: rgba(0, 0, 0, 0.25);
+    }
+    .ant-tabs-ink-bar {
+      background: @matterhorn;
+    }
+    .ant-tabs-nav .ant-tabs-tab {
+      font-size: 1rem;
+      margin-right: 22px;
+      letter-spacing: 0.3px;
+    }
+
+    .ant-tabs-bar {
+      border-bottom: 1px solid @gray90; 
+      margin-bottom: 13px;
+    }
+
+    .Green-Text {
+      color: @green;    
+    }
+
+    .Matterhorn-Text {
+      color: @matterhorn;
+    }
+
+    .Warmblue-Text {
+      color: @warmblue;
+      a {
+        color: @warmblue;
+      }
+    }
+      //
+    .ant-btn-change {
+      background-color: @highlight-color;
+      color: @matterhorn;
+      box-shadow: @box-shadow-secondary;
+      padding-left: 24px;
+      padding-right: 24px; 
+    }
+
+    .ant-btn-change:focus,
+    .ant-btn-change:hover,
+    .ant-btn-change:active {
+      background-color: @matterhorn;
+      color: #ffffff;
+    }
+    .ant-btn[disabled] {
+      color: rgba(0, 0, 0, 0.25);
+      background-color: #f5f5f5;
+      border-color: #fff;
+      text-shadow: none;
+      box-shadow: none;
+    }
+    .DistanceReports__PerformanceStats{
+      .ant-tabs-nav .ant-tabs-tab {
+        font-size: 1.25rem;
+        padding-bottom: 20px;
+        padding-top: 20px;
+      }
+    }
+    .DistanceReports__PerformanceStats{
+      .ToggleSelect {
+        .ToggleSelect__ButtonContainer{
+          flex-direction: column;
+          .ButtonCustom {
+            margin-left: 0px !important;
+            margin-bottom: 15px;
+            width: 150px;
+            height: 40px;
+          }
+          .Selected{
+            background-color: @skyblue;
+            color: @white;
+          }
+        }
+      }
+    }
+    .EdsDashboard_New {
+      height: calc(100vh - 105px);
+      min-height: 750px;
+      .BG--Blue {
+        background-color: #1c2540;
+      }
+      @media screen and (min-width: 1450px){
+        .Dashboard_DataCard{
+          padding-left: 10px;
+          padding-right: 10px;
+          .DataCard_Content {
+            height: calc(100% - 50px);
+          }
+          .Icon {
+            width: 100px;
+            height: 100px;
+            margin-top: -60px;
+          }
+        }
+        .Font--S16 {
+          font-size: 1.125rem;
+        }
+        .Font--S12 {
+          font-size: 0.875rem;
+        }
+        .Font--S18 {
+          font-size: 1.25rem;
+        }
+        .Font--S14 {
+          font-size: 1.0rem;
+        }
+        .Font--S24 {
+          font-size: 1.75rem;
+        }
+      }
+      .Dashboard__Carousel {
+        .Carousel__Action {
+          align-items: center;
+          width: 200px;
+          svg {
+            height: 20px;
+            width: 20px;
+          }
+          .Carousel__Pagination{
+            padding: 5px 19px;
+            font-size: 10px;
+            color: #889bf9            ;
+            background-color: #242e4c;
+            border-radius: 15px;
+          }
+        }
+        .Carousel_Slide {
+          padding: 0 10px;
+        }
+        .Carousel__Slide__Title__Green {
+          background-color: #161F3B;
+          border-left: 1px solid #81cea5;
+          color: #81cea5;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          padding: 8px 16px; 
+        }
+        .Carousel__Slide__Title__Blue {
+          background-color: #161F3B;
+          border-left: 1px solid #598cdf;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          color: #598cdf;
+          padding: 8px 16px; 
+        }
+        .ant-carousel{
+          padding: 20px 10px 35px 10px;
+          background-color: #1c2540;
+          .slick-prev::before {
+            content: '',
+          }
+          .slick-next::before {
+            content: '',
+          }
+          .slick-arrow{
+            font-size: 16px;
+            line-height: 1;
+            color: rgba(88, 88, 88, 0.08);
+          }
+          height: 100%;
+          .slick-slider{
+            height: 100%;
+          }
+          .slick-slide >div{
+            height: 100%;
+          }
+          
+          .slick-list{
+            height: 100%;
+
+          }
+          .slick-track {
+            height: 100%;
+          }
+        }
+      }
+      .EdsDashboard__Filter {
+        position: fixed;
+        right: 0px;
+        top: 70px;
+        background-color: #1C2540;
+        box-shadow: @box-shadow-base;
+        .EdsDashboardFilterWrap {
+          button {
+            padding: 0;
+          }
+        }
+      }
+      .EdsDashboardSettingWrap{
+        button {
+          background: #1C2540,
+        }
+      }
+
+      .Dashboard__Legend {
+        .Legend__Color{
+          height: 16px;
+          width: 16px;
+          border-radius: 4px;
+        }
+        .Legend__viewMoreTitle{
+          margin-left: 21px;
+          text-decoration: underline;
+        }
+      }
+
+      .Dashboard_Primary_Complaint {
+        background-color: #161F3B;
+        border-radius: 5px;
+      }
+  
+      .DispatchTrendWrap {
+        background-color: #161F3B;
+        border-radius: 5px;
+      }
+      .OnRoadVehicle {
+        background-color: #161F3B;
+        border-radius: 5px;
+      }
+      .DistrictMap {
+        .Heading {
+          padding: 10px 0px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid #1BC5BD;
+        }
+        svg {
+          outline: none;
+        }
+        .InceptionCount {
+          color: #1BC5BD;
+        }
+      }
+    }
+    .EdsDashboard {
+      height: calc(100vh - 100px);
+      .EdsDashboard__ListAction {
+        height: 40px;
+      }
+
+      .Dashboard__Carousel {
+        .Carousel__Action {
+          align-items: center;
+          .Carousel__Pagination{
+              padding: 5px 28px;
+              background-color: rgba(88, 88, 88, 0.08);
+              border-radius: 15px;
+          }
+        }
+        .ant-carousel{
+          .slick-prev::before {
+            content: '',
+          }
+          .slick-next::before {
+            content: '',
+          }
+          .slick-arrow{
+            font-size: 16px;
+            line-height: 1;
+            color: rgba(88, 88, 88, 0.08);
+          }
+          height: 100%;
+          .slick-slider{
+            height: 100%;
+            *div{
+              height: 50%;
+            }
+          }
+          .slick-slide >div{
+            height: 48%;
+          }
+          .slick-slide >div:nth-child(odd){
+            margin-bottom: 30px;
+          }
+          
+          .slick-list{
+            height: 100%;
+          }
+          .slick-track {
+            height: 100%;
+          }
+        }
+      }
+      .EdsDashboard__Filter {
+        position: fixed;
+        right: 0px;
+        top: 65px;
+        background-color: white;
+        box-shadow: @box-shadow-base;
+      }
+
+      .Dashboard__Legend {
+        .Legend__Color{
+          height: 16px;
+          width: 16px;
+          border-radius: 4px;
+        }
+        .Legend__viewMoreTitle{
+          margin-left: 21px;
+          text-decoration: underline;
+        }
+      }
+
+      .Dashboard_Primary_Complaint {
+        padding: 20px;
+        .Primary_Complaint__Title {
+          color: #4c4c4c;
+        }
+      }
+      .TabularData {
+        height: 100%;
+        width: 100%;
+        padding: 15px 20px;;
+        overflow-y: auto;
+        .TabularData--Item {
+          padding: 8px;
+        }
+        .Bg-Color--LightGreen {
+          background-color: #effbf4;
+        }
+        .Bg-Color--LightPink {
+          background-color: #fef6f6;
+        }
+      }
+      .DispatchTrendWrap {
+        padding: 20px 20px;
+      }
+      .OnRoadVehicle {
+        padding: 20px 20px;
+      }
+      .DistrictMap {
+        svg {
+          display: block;
+          width  : 100%;
+          height: 100%;
+
+          .District{
+            cursor: pointer;
+            stroke-width: 8px;
+            stroke: black;
+
+            &:hover {
+                fill : darkblue;
+                z-index: 22;
+            }
+          }
+  
+          .Selected {
+              fill: darkblue;
+              stroke: black;
+              z-index: 222;
+          }
+  
+      }
+
+      }
+
+    }
+    .EdsDashboardSetting__Setting {
+      width: 573px;
+      background: #e2e5de;
+      .Input{
+        width: 275px;
+      }
+      .ToggleSelect {
+        .Selected {
+          background-color: skyblue;
+        }
+      }
+      .Arrow-Up {
+        border-bottom: 10px solid #e2e5de;
+      }
+    }
+
+    .NhmDashboardWrapper {
+      // header
+      .Header_Wrapper{
+        width: 100%;
+        height: 170px;
+        background-image: url('/upNhmDashboard/bg-up-dashboard.png');
+        background-repeat: no-repeat;
+        background-color: #fff;
+        background-size: 100% 100%;
+        z-index: -1;
+        .Header_Logo{
+            height: 120px;
+        }
+        .mediumScreen({
+            .Header_Logo{
+                height: 67px;
+            }
+        })
+      }
+
+      // sub header
+      .SubHeaderWrapper{
+        .SubHeader{
+            background: #ff9d04;
+            padding: 5px;
+            border: 2px solid #ff7606;
+            border-radius: 4px;
+            // margin-top: 140px;
+            margin-top: -20px;
+        }
+        .ButtonCustom {
+            background-color: transparent;
+            padding: 5px 20px;
+        }
+        .Divider{
+            border: 1px solid #ff7606;
+        }
+        .mediumScreen({
+            .SubHeader {
+                margin-top: 90px;
+            }
+        })
+      }
+
+      // Data Card
+      .DataCardWrapper{
+        margin: 5px 0px;
+        height: 92%;
+        border-radius: 4px;
+        .DataCard{
+            height: 100%;
+        }
+        .DataCard__Value {
+            font-size: 1.625rem;
+        }
+        .Icon {
+            border-radius: 4px;
+        }
+      }
+
+      // Data tile
+      .DataTileWrapper {
+        margin: 5px 0px;
+        .Head {
+          font-size: 0.875rem;
+          padding: 15px 0px;
+          text-align: center;
+        }
+        .Column {
+          min-height: 55px;
+          text-align: center;
+          padding: 18px 0px;
+        }
+        .ColumnOne {
+          border-right: 1px solid;
+        }
+        .KeyStyle {
+          font-size: 1rem;
+        }
+        .ValueStyle {
+          font-size: 1.25rem;
+          font-weight: 500;
+          margin-left: 25px;
+        }
+      }
+
+      // Data table
+      .DataTableWrapper {
+        margin: 5px 0px;
+        .ListRow {
+          .ListText {
+            color: #fff;
+            vertical-align: middle;
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.25rem;
+            padding: 0px 40px;
+            height: 70px;
+          }
+          tr,td {
+            border-left: 1px solid;
+            border-right: 1px solid;
+          }
+        }
+        .HeaderRow {
+          .HeaderText {
+            color: #fff;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 0.875rem;
+            padding: 10px;
+            height: 70px;
+          }
+          th,td {
+            border-left: 1px solid;
+            border-right: 1px solid;
+          }
+        }
+      }
+    }
+
+  }
+  //end of ZiqitzaEdsDashboard
+  .EdsDashboard_ListAction_Dropdown {
+    .ant-select-item-option-selected {
+      background-color: transparent !important;
+    }
+  }
+
+  .EdsDashboardListFilter-Position-left {
+    .ant-menu {
+      left: 144px;
+      top: 17px;
+      position: relative;
+      box-shadow: @box-shadow-dropbox;
+    }
+  }
+
+  .EdsDashboardListFilter-Position-right {
+    .ant-menu {
+      right: 205px;
+      top: 17px;
+      position: relative;
+      box-shadow: @box-shadow-dropbox;
+    }
+  }
+  .EdsDashboardDrawerFilter {
+    .ant-drawer-content {
+      top: 60px;
+    }
+
+    .ant-drawer-body {
+      padding: 0px;
+    }
+
+  }
+  .DashBoardFilterContainer{
+    .ant-drawer-content {
+      background: #e2e5de;
+    }
+  }
+  .EdsDashboardListFilter-Position-left .ant-menu.ServiceStatusSettingWrap {
+    left: 15px;
+  }
+  
+  .EdsDashboardListFilter-Position-left .ant-menu.TrackingAlertReportFilterWrap {
+    left: 15px;
+  }
+  .EdsDashboardListSetting-Position-left {
+    .ant-menu {
+      left: 144px;
+      top: 17px;
+      position: relative;
+      box-shadow: @box-shadow-dropbox;
+    }
+  }
+  .EdsDashboardListSetting-Position-right {
+    .ant-menu {
+      top: 17px;
+      position: relative;
+      box-shadow: @box-shadow-dropbox;
+    }
+  }
+  
+  .EdsDashboardListSetting-Position-left .ant-menu.EdsDashboardSettingWrap {
+    left: 34px;
+  }
+  
+  //ant notification
+  .ant-notification {
+    width: 300px;
+    margin-right: 40px;
+  }
+
+  .EdsDashboard-Notification.ant-notification-notice {
+    padding-left: 10px;
+    line-height: 1;
+    svg {
+      vertical-align: middle;
+    }
+    .ant-notification-notice-with-icon {
+      .ant-notification-notice-message {
+        margin-left: 34px;
+        font-size: 1rem;
+        color: @error-color;
+        font-weight: bold;
+      }
+      .ant-notification-notice-description {
+        margin-left: 34px;
+        font-size: 0.875rem;
+        margin-right: 20px;
+      }
+    }
+    .EdsDashboard__Components__Notification__SpanId {
+      color: @red;
+    }
+  }
+
+  .EdsDashboard-Notification.success {
+    .ant-notification-notice-with-icon .ant-notification-notice-message {
+      color: @success-color;
+    }
+  }
+
+  .ant-modal-close {
+    top: 5px;
+  }
+
+  .ant-modal-body {
+    padding: 20px;
+    line-height: 1;
+  }
+
+  .EdsDashboardDateRangePicker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 275px;
+    height: 54px;
+    .DateRangePicker__Label {
+      font-size: 0.875rem;
+      color: @gray99;
+      margin-bottom: 6px;
+    }
+  
+    .Error {
+      &:extend(.Input__Label);
+    }
+  
+    .Error--Border {
+      &:extend(.Box--Shadow);
+      border: 1px solid @error-color;
+      border-right-width: 1px !important;
+    }
+  
+    .ant-picker {
+      border-radius: 4px; 
+      font-size: 0.875rem;
+      padding: 12px 8px 9px 8px;
+      position: absolute;
+      left: 0;
+      top: 20px;
+      right: 0;
+      height: 36px;
+    }
+  
+    .ant-picker:focus {
+      border: 1px solid @input-focus-border-color;
+      outline: 1;
+      -webkit-box-shadow: @box-shadow-base;
+      box-shadow: @box-shadow-base;
+      border-right-width: 1px !important;
+    }
+  
+    .DateRangePicker__Error {
+      font-size: 0.75rem;
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      color: @error-color;
+    }
+    input {
+      color: @graydark;
+    }
+  }
+  
+  #Hidden-Screen-Print {
+    display:none;
+  }
+  
+  @media print {
+    table {
+      page-break-inside:auto
+    }
+    
+    tr {
+      page-break-inside:avoid;
+      page-break-after:auto
+    }
+    
+    thead {
+      display:table-header-group;
+    }
+  
+    #Hidden-Screen-Print {
+      display:block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: @highlight-color;
+      z-index: 1001;
+    }
+  
+    .No_Print {
+      display: none;
+    }
+  }
+  .Legend__viewMore{
+    .ant-popover-inner-content{
+      padding: 0,
+    }
+    .Flex {
+      display: flex;
+    }
+    .Legend__Dot {
+      height: 4px;
+      width: 4px;
+      background-color: black;
+      border-radius: 2px;
+    }
+    .Font--WB {
+      font-weight: bold;
+    }
+    .Legend__Color{
+      height: 16px;
+      width: 16px;
+      border-radius: 4px;
+    }
+    .Warmblue-Text{
+      color: @blue;
+    }
+    .Align-Items-Center {
+      align-items: center;
+    }
+    .Mt-10 {
+      margin-top: 10px;
+    }
+    .Ml-10 {
+      margin-left: 10px;
+    }
+    .Font--S10 {
+      font-size: 0.625rem;
+    }
+  }
+
+}
